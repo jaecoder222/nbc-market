@@ -7,7 +7,7 @@ const ProductsSchema = new mongoose.Schema({
   },
   content: {
     type: String,
-    required: false,
+    required: true,
   },
   password: {
     type: String,
@@ -19,6 +19,7 @@ const ProductsSchema = new mongoose.Schema({
   },
   status: {
     type: String,
+    enum: ["FOR_SALE", "SOLD_OUT"],
     default: "FOR_SALE",
   },
   createdAt: {
